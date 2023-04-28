@@ -1,0 +1,24 @@
+@import '../../styles/global';
+
+.site-logo {
+    @include typography(23px, 1, 700, -0.5px, Syne);
+    top: 30px;
+    pointer-events: none;
+    &.dark {
+      @include dark;
+    }
+    .site-logo-base {
+      border: 3px solid;
+      padding: 5px 9px;
+      border-radius: 3px;
+      @include color-pallete-set('border-color', "");
+    }
+
+    .site-logo-text-wrapper {
+      margin-left: 10px;
+      .site-logo-middle, .site-logo-bottom {
+        margin: auto;
+        font-size: 20px;
+      }
+    }
+  }

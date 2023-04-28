@@ -1,0 +1,44 @@
+@import "../../styles/global.scss";
+
+.button-container {
+  color: $color-black;
+  border: 2px solid;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  
+  button {
+    margin-bottom: 50px;
+  }
+  
+  &.primary {
+    &:hover, &:focus {
+      box-shadow: 10px 10px $color-primary;
+    }
+  }
+  &.secondary {
+    &:hover, &:focus  {
+      box-shadow: 10px 10px $color-secondary;
+    }
+  }
+  &.tertiary {
+    &:hover, &:focus  {
+      box-shadow: 10px 10px $color-tertiary;
+    }
+  }
+  &.primary-variant {
+    &:hover, &:focus  {
+      box-shadow: 10px 10px $color-primary-variant;
+    }
+  }
+  &.secondary-variant {
+    &:hover, &:focus  {
+      box-shadow: 10px 10px $color-secondary-variant;
+    }
+  }
+  &.tertiary-variant {
+    &:hover, &:focus  {
+      box-shadow: 10px 10px $color-tertiary-variant;
+    }
+  }
+}
