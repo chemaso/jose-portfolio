@@ -1,0 +1,94 @@
+@import '../../styles/global';
+
+.scroller-container {
+  position: fixed;
+  z-index: $z-index-scroll;
+  display: none;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: 'Syne';
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+
+  &.mobile {
+    display: flex;
+    bottom: 10px;
+    left: 30%;
+    .scroller-text {
+      padding-left: 14px;
+      p {
+        font-size: 14px;
+      font-weight: bold;
+      }
+      &.dark {
+        p {
+          color: $color-black !important;
+        }
+      }
+    }
+
+    @include laptop {
+      display: none;
+    }
+  }
+  &.dark {
+    @include dark;
+  }
+  &.desktop {
+    display: none;
+
+    @include laptop {
+      display: block;
+      bottom: 140px;
+    }
+  }
+ 
+  .scroller-text {
+    font-size: 14px;
+    font-weight: 800;
+    color: $color-white;
+    &.dark {
+      @include dark;
+    }
+  }
+  .scroller {
+    width: 60px;
+    height: 28px;
+    border: 5px solid $color-white;
+    border-radius: 15px;
+
+
+    &.dark {
+      @include dark;
+      border: 5px solid $color-black;
+    }
+
+
+    .scroller-circle {
+      width: 14px;
+      height: 14px;
+      color: $color-white;
+      margin: 2px;
+      border-radius: 100px;
+      background: $color-white;
+      animation: scroller 1s infinite;
+      &.dark {
+        background: $color-black;
+      }
+      &.dark {
+        @include dark;
+      }
+
+      @keyframes scroller {
+        0% {
+          transform: translateX(0px);
+        }
+        100% {
+          transform: translateX(30px);
+        }
+      }
+    }
+  }
+}
