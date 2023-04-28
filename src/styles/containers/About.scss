@@ -15,7 +15,13 @@
         align-items: flex-start;
 
         .about-content-image {
-            padding-right: 5%;            
+            padding-right: 5%;  
+            position: relative;          
+            top: 0;
+
+            @include laptop {
+                position: sticky;
+            }
         }
     }
 
@@ -23,11 +29,22 @@
         flex: 1 0 40%;
         margin-bottom: 20px;
         img {
+            animation: opacity-show 3s ease forwards;
             width: 90%;
             height: fit-content;
         }
     }
     .about-content-description {
         flex: 1 0 40%;
+        animation: opacity-show 3s ease forwards;
+    }
+}
+
+@keyframes opacity-show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
