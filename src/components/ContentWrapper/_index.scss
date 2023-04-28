@@ -1,0 +1,19 @@
+@import '../../styles/global';
+
+.content-wrapper {
+    width: 100%;
+    max-width: $bp-desktop-large;
+    display: flex;
+    justify-content: center;
+
+    &.left {
+        justify-content: flex-start;
+    }
+    &.right {
+        justify-content: flex-end;
+    }
+    @include laptop {
+        margin: auto;
+        padding-left: 100px;
+    }
+}
