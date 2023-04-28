@@ -31,8 +31,6 @@ This project is built using the following technologies:
 - CSS
 - JavaScript
 - Node.js
-- Express.js
-- Nodemailer
 
 ## Installation
 
