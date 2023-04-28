@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne&family=Tilt+Warp&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v22/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2)
+    format("woff2");
+}
+
+.material-icons {
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  direction: ltr;
+  display: inline-block;
+  font-family: "Material Icons";
+  font-feature-settings: "liga";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+@mixin typography(
+  $fontSize,
+  $lineHeight,
+  $fontWeight: 400,
+  $letterSpacing: -0.5px,
+  $fontFamily: Poppins
+) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  letter-spacing: $letterSpacing;
+  font-family: $fontFamily;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+.p {
+  @include typography(14px, 1.2, 500, 3px, Syne);
+  @include tablet {
+    @include typography(18px, 1.2, 500, 3px, Syne);
+  }
+  @include desktop {
+    @include typography(24px, 1.2, 500, 3px, Syne);
+  }
+}
+
+h1,
+.h1 {
+  @include typography(65px, 65px, 600, -3px);
+  @include tablet { 
+    @include typography(100px, 100px, 600, -3px);
+  }
+  @include desktop {
+    @include typography(130px, 110px, 600, -3px);
+  }
+  @include big-desktop {
+    @include typography(180px, 150px, 600, -3px);
+  }
+}
+
+h2,
+.h2 {
+  @include typography(40px, 40px, 600, -1.25px);
+  @include tablet {
+    @include typography(50px, 50px, 600, -1.25px);
+  }
+  @include desktop {
+    @include typography(60px, 60px, 600, -1.25px);
+  }
+  @include big-desktop {
+    @include typography(90px, 85px, 600, -1.25px);
+  }
+}
+
+h3,
+.h3 {
+  @include typography(36px, 36px, 500, -1px);
+  @include desktop {
+    @include typography(48px, 48px, 500, -1px);
+  }
+}
+
+h4,
+.h4 {
+  @include typography(24px, 24px, 500, -0.5px);
+  @include desktop {
+    @include typography(36px, 40px, 500, -0.5px);
+  }
+}
+
+h5,
+.h5 {
+  @include typography(18px, 25px, 600, 8px);
+  @include desktop {
+    @include typography(32px, 40px, 600, 10px);
+  }
+}
+
+h6,
+.h6 {
+  @include typography(14px, 24px, 500, -0.25px);
+
+  @include desktop {
+    @include typography(16px, 28px, 500, 0);
+  }
+}
+
+a {
+  text-decoration: none;
+}

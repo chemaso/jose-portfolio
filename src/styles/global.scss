@@ -1,0 +1,64 @@
+@import "./breakpoints";
+@import "./typography";
+@import "./colors";
+@import './containers/About';
+@import './containers/Work';
+
+$z-index-game: 0;
+$z-index-navigation: 2;
+$z-index-scroll: 4;
+$z-index-logo: 3;
+$z-index-loading: 5;
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-center-xy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin dark {
+  color: $color-black;
+  a {
+    color: $color-black;
+  }
+}
+
+@mixin light {
+  color: $color-white;
+}
+
+.mixin-blend-mode {
+  color: inherit !important;
+  mix-blend-mode: difference;
+}
+
+.width-100 {
+  width: 100%;
+}
+.width-90 {
+  width: 90%;
+}
+.width-80 {
+  width: 80%;
+}
+.width-70 {
+  width: 70%;
+}
+.width-60 {
+  width: 60%;
+}
+.width-50 {
+  width: 50%;
+}
+.width-40 {
+  width: 40%;
+}

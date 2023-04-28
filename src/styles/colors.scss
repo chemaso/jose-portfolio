@@ -1,0 +1,100 @@
+// root colors
+
+$color-black: #1a1a1a;
+$color-white: #ffffff;
+$color-primary: #9c9c9c;
+$color-secondary: #b34a4a;
+$color-tertiary: #5579a2;
+$color-primary-variant: #ff0076;
+$color-secondary-variant: #f1ba18;
+$color-tertiary-variant: #f009ff;
+$color-recreation:  #cecece;
+$color-nerdwallet: #7AC80E;
+$color-starmeup: #61e8f1;
+$color-google: #E74434;
+$color-apollo: #57CAFA;
+$color-freelance: rgb(0, 0, 0);
+
+// root background
+
+$background-color-primary--about: #f2f3f0;
+
+$background-color-primary: #ffffff;
+$background-color-secondary: #e88888;
+$background-color-tertiary: #57bfdb;
+$background-color-primary-variant: #a988ad;
+$background-color-secondary-variant: #f7db25;
+$background-color-tertiary-variant: #eaeaea;
+$background-color-recreation:  rgb(91, 175, 91);
+$background-color-nerdwallet: #FAD083;
+$background-color-starmeup: #5871FD;
+$background-color-google: #ffffff;
+$background-color-apollo: #073B6F;
+$background-color-freelance: rgb(46, 46, 46);
+
+$background: (
+  "primary": $background-color-primary,
+  "secondary": $background-color-secondary,
+  "tertiary": $background-color-tertiary,
+  "primary-variant": $background-color-primary-variant,
+  "secondary-variant": $background-color-secondary-variant,
+  "tertiary-variant": $background-color-tertiary-variant,
+  "nerdwallet": $background-color-nerdwallet,
+  "recreation": $background-color-recreation,
+  "google": $background-color-google,
+  "apollo": $background-color-apollo,
+  "starmeup": $background-color-starmeup,
+  "freelance": $background-color-freelance,
+);
+
+$colors: (
+  "primary": $color-primary,
+  "secondary": $color-secondary,
+  "tertiary": $color-tertiary,
+  "primary-variant": $color-primary-variant,
+  "secondary-variant": $color-secondary-variant,
+  "tertiary-variant": $color-tertiary-variant,
+  "nerdwallet": $color-nerdwallet,
+  "recreation": $color-recreation,
+  "google": $color-google,
+  "apollo": $color-apollo,
+  "starmeup": $color-starmeup,
+  "freelance": $color-freelance,
+);
+
+@mixin color-pallete-set($property, $additional, $extra-value: null) {
+  @each $name, $color in $colors {
+    &.#{$name $additional} {
+      #{$property}: $extra-value $color;
+    }
+  }
+}
+
+@mixin background-pallete-set($property, $additional, $extra-value: null) {
+  @each $name, $color in $background {
+    &.#{$name $additional} {
+      #{$property}: $extra-value $color;
+    }
+  }
+}
+
+@mixin background-clip($property) {
+  -webkit-background-clip: $property;
+  -moz-background-clip: $property;
+  background-clip: $property;
+}
+
+@mixin fill-color($property) {
+  -webkit-text-fill-color: $property;
+  -moz-text-fill-color: $property;
+}
+
+@mixin stroke-width($property) {
+  -webkit-text-stroke-width: $property;
+  -moz-text-stroke-width: $property;
+}
+
+@mixin stroke-color($property) {
+  -webkit-text-stroke-color: $property;
+  -moz-text-stroke-color: $property;
+}
