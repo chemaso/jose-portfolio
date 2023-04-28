@@ -1,0 +1,18 @@
+
+@import '../../styles/global.scss';
+
+.game-back-container {
+  padding-top: 55px;
+  height: 100vh;
+  position: relative;
+
+  @include laptop {
+    padding-right: 60px;
+  }
+}
+
+.title-game {
+  position: absolute;
+  text-align: center;
+  opacity: 0;
+}
