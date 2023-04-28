@@ -1,0 +1,57 @@
+@import "../../styles/global.scss";
+
+.next-product {
+  width: 100%;
+  border: none;
+}
+
+.next-product-container {
+  height: 40vh;
+  position: relative;
+  cursor: pointer;
+  .next-product-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+
+  }
+  .next-product-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+    z-index: 2;
+    background-color:#2e2d2d85;
+
+    .next-product-bg {
+      i {
+        font-size: inherit;
+        animation: move-arrow 2s ease infinite;
+      }
+      h3 {
+        display: flex;
+        color: $color-white;
+        align-items: center;
+      }
+      @include color-pallete-set("color", "");
+      @include background-pallete-set("background-color", "");
+    }
+  }
+}
+
+@keyframes move-arrow {
+  from {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,48 @@
+@import "../../styles/global.scss";
+
+$animationSpeed: 120s;
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-30vw * 7));
+  }
+}
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(calc(-30vw * 7));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slider {
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  .slide-track {
+    animation: scroll $animationSpeed linear infinite;
+    display: flex;
+    width: calc(30vw * 3.5);
+    
+    &.reverse {
+        animation: scroll-reverse $animationSpeed linear infinite;
+    }
+  }
+
+  .slide {
+    margin: 20px;
+    height: 100%;
+    width: 100%;
+    box-shadow: 3px 3px 14px #b5b5b5;
+  }
+  .slide-img {
+    width: 30vw;
+  }
+}

@@ -1,0 +1,76 @@
+@import '../../styles/global.scss';
+
+.progress-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    opacity: 0;
+    &.show {
+        animation: opacity-show 3s ease forwards;
+    }
+    .progress-label-container {
+        flex: 1 0 40%;
+        width: 40%;
+        .progress-label {
+            color: $color-black;
+        }
+    }
+    .progress-container {
+        height: 40px;
+        width: 30vw;
+        border: 2px solid;
+        border-color: $color-black;
+        @include color-pallete-set("box-shadow", "", 6px 6px);
+        .progress-fill {
+            height: 30px;
+            position: relative;
+
+            &.show {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    margin-top: 3px;
+                    margin-left: 3px;
+                    animation: animate-bar 2s forwards;
+                    height: 30px;
+                    width: inherit;
+                    background-color: rgb(146, 146, 146);
+                }
+            }
+        }
+    }
+} 
+
+@keyframes animate-bar {
+    from {
+        width: 30%;
+    }
+    30% {
+        width: 60%;
+    }
+    40% {
+        width: 30%;
+    }
+    60% {
+        width: 80%;
+    }
+    80%{
+        width: 50%;
+    }
+    to {
+        width: inherit;
+    }
+    
+}
+
+@keyframes opacity-show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

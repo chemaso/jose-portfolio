@@ -1,0 +1,132 @@
+@import "../../styles/global";
+
+$halftone: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAHElEQVQYV2NUVFT8f//+fUYGBgYGMAEDcA5IBQCKJQVmn76DhAAAAABJRU5ErkJggg==");
+$stroke: $color-black;
+$shadow: #9c9c9c;
+
+.stand {
+  opacity: 0;
+  &.show {
+    opacity: 1;
+    animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+  }
+  .halftone {
+    position: relative;
+  }
+
+  .primary {
+    &.stroke {
+      @include stroke-color($stroke);
+    }
+    &.halftone-color:after {
+      background-color: $color-primary;
+    }
+  }
+  .secondary {
+    &.stroke {
+      @include stroke-color($stroke);
+    }
+    &.halftone-color:after {
+      background-color: $color-secondary;
+    }
+  }
+  .tertiary {
+    &.halftone-color:after {
+      background-color: $color-tertiary;
+    }
+  }
+  .primary-variant.halftone-color:after {
+    background-color: $color-primary-variant;
+  }
+  .secondary-variant.halftone-color:after {
+    background-color: $color-secondary-variant;
+  }
+  .recreation {
+    &.stroke {
+      @include stroke-color(rgb(136, 216, 136));
+    }
+    &.halftone-color:after {
+      background-color: $color-recreation;
+    }
+  }
+  .google {
+    &.stroke {
+      @include stroke-color(#4285F4);
+    }
+    &.halftone-color:after {
+      background-color: $color-google;
+    }
+  }
+  .nerdwallet {
+    &.stroke {
+      @include stroke-color(#64B341);
+    }
+    &.halftone-color:after {
+      background-color: $color-nerdwallet;
+    }
+  }
+  .apollo {
+    &.stroke {
+      @include stroke-color($color-white);
+    }
+    &.halftone-color:after {
+      background-color: $color-apollo;
+    }
+  }
+  .starmeup {
+    &.stroke {
+      @include stroke-color($color-white);
+    }
+    &.halftone-color:after {
+      background-color: $color-starmeup;
+    }
+  }
+  .freelance {
+    &.stroke {
+      @include stroke-color(rgb(128, 128, 128));
+    }
+    &.halftone-color:after {
+      background-color: $color-freelance;
+    }
+  }
+
+  .halftone:after {
+    content: attr(data-value);
+    background: $halftone repeat;
+    top: 0.15rem;
+    left: .3rem;
+    position: absolute;
+    z-index: -1;
+    @include stroke-width(0);
+    @include background-clip(text);
+    @include fill-color(transparent);
+    @include tablet {
+      left: .3rem;
+      top: 0.3rem;
+    }
+  }
+
+  .stroke {
+    @include stroke-width(2px);
+    @include stroke-color($stroke);
+    color: transparent;
+  }
+
+  .shadow {
+    text-shadow: 3px 3px $shadow;
+    @include color-pallete-set("text-shadow", "", 3px 3px);
+    @include tablet {
+      text-shadow: 5px 5px $shadow;
+      @include color-pallete-set("text-shadow", "", 6px 5px);
+    }
+  }
+
+  @keyframes text-clip {
+    from {
+      clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+    to {
+      clip-path: polygon(0 0, 150% 0, 150% 100%, 0 150%);
+    }
+  }
+}
