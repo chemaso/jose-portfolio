@@ -5,6 +5,7 @@
     "@react-three/fiber": "^8.13.0",
     "@react-three/postprocessing": "^2.7.1",
     "@types/three": "0.143.0",
+    "gatsby": "^5.9.0",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.3",
     "react": "18.2.0",
@@ -14,12 +15,20 @@
     "three": "0.143.0"
   },
   "devDependencies": {
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "^2.8.8",
     "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "eject": "react-scripts eject"
   },
   "browserslist": [

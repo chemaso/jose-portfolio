@@ -1,11 +1,11 @@
-import React, { Suspense } from "react";
-import Title from "../components/Title";
-const GameBack = React.lazy(() => import("../components/GameBack"));
-const WorkHome = React.lazy(() => import("../components/WorkComponents"));
-const AboutHome = React.lazy(() => import("../components/AboutComponents"));
-import ContactHome from "../components/ContactComponents";
+import React, { Suspense } from 'react';
+import Title from '../components/Title';
+const GameBack = React.lazy(() => import('../components/GameBack'));
+const WorkHome = React.lazy(() => import('../components/WorkComponents'));
+const AboutHome = React.lazy(() => import('../components/AboutComponents'));
+import ContactHome from '../components/ContactComponents';
 
-export default function HomePage({ styleIndex }) {
+export default function HomePage() {
   return (
     <div id="main" role="main">
       <div id="game-back-container" className="game-back-container">
@@ -14,8 +14,7 @@ export default function HomePage({ styleIndex }) {
           className="title-game"
           id="title-game"
           show={true}
-          delay={0}
-        >
+          delay={0}>
           CREATE, INNOVATE, STAND OUT
         </Title>
         <Suspense fallback={null}>
@@ -26,9 +25,9 @@ export default function HomePage({ styleIndex }) {
         <AboutHome />
       </Suspense>
       <Suspense fallback={null}>
-        <WorkHome styleIndex={styleIndex} />
+        <WorkHome />
       </Suspense>
-      <ContactHome styleIndex={styleIndex} />
+      <ContactHome />
     </div>
   );
 }

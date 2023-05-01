@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
-import { join } from "../../utils";
-import { colors } from "../../constants";
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { join } from '../../utils';
+import { colors } from '../../constants';
 import { useTheme } from '../AppProvider';
-import "./_index.scss";
-
+import './_index.scss';
 
 const Title = ({
   children,
@@ -13,78 +13,88 @@ const Title = ({
   show,
   delay,
   component = 'h1',
-  ariaLevel = 'h1',
+  ariaLevel = 'h1'
 }) => {
   const TitleTag = ariaLevel;
-  const { shuffle } = useTheme()
-  const [showClass, setShowClass] = useState("");
+  const { shuffle } = useTheme();
+  const [showClass, setShowClass] = useState('');
   useEffect(() => {
     if (!wrapperId) {
       return;
     }
-    const elem = document.getElementById(wrapperId);
-    if (!id) {
-      return;
+    if (typeof document !== `undefined`) {
+      const elem = document.getElementById(wrapperId);
+      if (!id) {
+        return;
+      }
+      elem?.addEventListener('mousemove', handleMouseMovement, true);
+      elem?.addEventListener('mouseleave', (e) => handleMouseMovement(e, 'remove'), true);
+      return () => {
+        elem?.removeEventListener('mousemove', handleMouseMovement);
+        elem?.removeEventListener('mouseleave', handleMouseMovement);
+      };
     }
-    elem?.addEventListener("mousemove", handleMouseMovement, true);
-    elem?.addEventListener(
-      "mouseleave",
-      (e) => handleMouseMovement(e, "remove"),
-      true
-    );
-    return () => {
-      elem?.removeEventListener("mousemove", handleMouseMovement);
-      elem?.removeEventListener("mouseleave", handleMouseMovement);
-    };
   });
 
   useEffect(() => {
     if (show) {
       setTimeout(() => {
-        setShowClass("show");
+        setShowClass('show');
       }, delay);
     } else {
       setTimeout(() => {
-        setShowClass("");
+        setShowClass('');
       }, delay);
     }
   }, [show]);
 
-  const handleMouseMovement = (event, remove) => {
+  const handleMouseMovement = (event = {}, remove) => {
     if (!id) {
       return;
     }
-    if (remove) {
-      document.getElementById(id).style.textShadow = "";
-      return;
+    if (typeof document !== `undefined`) {
+      if (remove) {
+        document.getElementById(id).style.textShadow = '';
+        return;
+      }
     }
     const mousePos = { x: event.clientX, y: event.clientY };
     const centerCoordinates = {
-      x: window.innerWidth / 2,
-      y: window.innerHeight / 2,
+      x: typeof window !== `undefined` ? window.innerWidth / 2 : 0,
+      y: typeof window !== `undefined` ? window.innerHeight / 2 : 0
     };
     const xCoor = `${(mousePos?.x - centerCoordinates?.x) / 50}px`;
     const yCoor = `${(mousePos?.y - centerCoordinates?.y) / 50}px`;
-    document.getElementById(id).style.textShadow = `${xCoor} ${yCoor} ${
-      colors[shuffle?.title]
-    }`;
+    if (typeof document !== `undefined`) {
+      document.getElementById(id).style.textShadow = `${xCoor} ${yCoor} ${colors[shuffle?.title]}`;
+    }
   };
 
-  let toneClass = shuffle?.style ? "dark" : "light";
+  let toneClass = shuffle?.style ? 'dark' : 'light';
 
   return (
-    <div className={join("stand", showClass)}>
+    <div className={join('stand', showClass)}>
       <div className="grid">
         <TitleTag
           data-value={children}
           id={id}
-          className={join("stroke", toneClass, shuffle.title, component, className)}
-        >
+          className={join('stroke', toneClass, shuffle.title, component, className)}>
           {children}
         </TitleTag>
       </div>
     </div>
   );
+};
+
+Title.propTypes = {
+  children: PropTypes.children,
+  id: PropTypes.string,
+  wrapperId: PropTypes.string,
+  className: PropTypes.string,
+  show: PropTypes.bool,
+  delay: PropTypes.number,
+  component: PropTypes.string,
+  ariaLevel: PropTypes.string
 };
 
 export default Title;

@@ -1,12 +1,13 @@
-import React from "react";
-import { join } from "../../utils";
-import { useTheme } from "../AppProvider";
-import Title from "../Title";
-import "./_index.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { join } from '../../utils';
+import { useTheme } from '../AppProvider';
+import Title from '../Title';
+import './_index.scss';
 
 export default function Header({ children, id, component, delay, titleClassName, subtle }) {
-const { shuffle } = useTheme();
-const darkStyle = shuffle?.style ? 'dark' : '';
+  const { shuffle } = useTheme();
+  const darkStyle = shuffle?.style ? 'dark' : '';
 
   return (
     <div className={join('header-container', shuffle?.title, darkStyle)}>
@@ -17,11 +18,19 @@ const darkStyle = shuffle?.style ? 'dark' : '';
         wrapperId={id}
         shuffle={shuffle}
         show={true}
-        delay={delay}
-      >
+        delay={delay}>
         {children}
       </Title>
       {subtle && <p className={join('p', 'dark')}>{subtle}</p>}
     </div>
   );
 }
+
+Header.propTypes = {
+  children: PropTypes.children,
+  id: PropTypes.string,
+  component: PropTypes.string,
+  delay: PropTypes.number,
+  titleClassName: PropTypes.string,
+  subtle: PropTypes.string
+};

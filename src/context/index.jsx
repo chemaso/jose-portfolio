@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import { createContext } from 'react';
 import { shuffleOptions } from '../constants';
 
 const StyleContext = createContext(shuffleOptions[0]);

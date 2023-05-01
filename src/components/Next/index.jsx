@@ -1,14 +1,14 @@
-import React from "react";
-import { Icon } from "../Icon";
-import "./_index.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Icon } from '../Icon';
+import './_index.scss';
 
 export default function NextProduct({ nextProduct, onNext }) {
   return (
     <button
-      className='next-product'
+      className="next-product"
       aria-label={`Navigate to next: ${nextProduct?.name}`}
-      onClick={() => onNext(`/work/${nextProduct.title}`)}
-    >
+      onClick={() => onNext(`/work/${nextProduct.title}`)}>
       <div className="next-product-container">
         <div
           className="next-product-image"
@@ -25,3 +25,11 @@ export default function NextProduct({ nextProduct, onNext }) {
     </button>
   );
 }
+
+NextProduct.propTypes = {
+  nextProduct: PropTypes.objectOf({
+    title: PropTypes.string,
+    name: PropTypes.string
+  }),
+  onNext: PropTypes.func
+};

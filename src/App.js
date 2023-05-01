@@ -1,12 +1,12 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SiteWrapper from "./components/SiteWrapper";
-import HomePage from "./containers/HomePage";
-import AboutPage from "./containers/AboutPage";
-import WorksPage from "./containers/WorksPage";
-import WorkPage from "./containers/WorkPage";
-import AppThemeProvider from "./components/AppProvider";
-import "./styles/global.scss";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SiteWrapper from './components/SiteWrapper';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import WorksPage from './pages/WorksPage';
+import WorkPage from './pages/WorkPage';
+import AppThemeProvider from './components/AppProvider';
+import './styles/global.scss';
 
 export default function App() {
   return (
