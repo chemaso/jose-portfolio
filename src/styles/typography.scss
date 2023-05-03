@@ -17,7 +17,7 @@
   display: inline-block;
   font-family: "Material Icons";
   font-feature-settings: "liga";
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -31,7 +31,7 @@
   $fontSize,
   $lineHeight,
   $fontWeight: 400,
-  $letterSpacing: -0.5px,
+  $letterSpacing: -0.0.313rem,
   $fontFamily: Poppins
 ) {
   font-size: $fontSize;
@@ -51,73 +51,76 @@ h5 {
 }
 
 .p {
-  @include typography(14px, 1.2, 500, 3px, Syne);
+  @include typography(0.875rem, 1.2, 500, 0.188rem, Syne);
   @include tablet {
-    @include typography(18px, 1.2, 500, 3px, Syne);
+    @include typography(1rem, 1.2, 500, 0.188rem, Syne);
   }
-  @include desktop {
-    @include typography(24px, 1.2, 500, 3px, Syne);
+  @include big-desktop {
+    @include typography(1.5rem, 1.2, 500, 0.188rem, Syne);
   }
 }
 
 h1,
 .h1 {
-  @include typography(65px, 65px, 600, -3px);
+  @include typography(4.063rem, 4rem, 600, -0.188rem);
   @include tablet { 
-    @include typography(100px, 100px, 600, -3px);
+    @include typography(6.25rem, 6rem, 600, -0.188rem);
   }
   @include desktop {
-    @include typography(130px, 110px, 600, -3px);
+    @include typography(7.125rem, 7rem, 600, -0.188rem);
   }
   @include big-desktop {
-    @include typography(180px, 150px, 600, -3px);
+    @include typography(11.25rem, 9.375rem, 600, -0.188rem);
   }
 }
 
 h2,
 .h2 {
-  @include typography(40px, 40px, 600, -1.25px);
+  @include typography(2.5rem, 2.5rem, 600, -1.1.563rem);
   @include tablet {
-    @include typography(50px, 50px, 600, -1.25px);
+    @include typography(3rem, 3rem, 600, -1.1.563rem);
   }
   @include desktop {
-    @include typography(60px, 60px, 600, -1.25px);
+    @include typography(3.45rem, 3.45rem, 600, -1.1.563rem);
   }
   @include big-desktop {
-    @include typography(90px, 85px, 600, -1.25px);
+    @include typography(5.625rem, 5.313rem, 600, -1.1.563rem);
   }
 }
 
 h3,
 .h3 {
-  @include typography(36px, 36px, 500, -1px);
-  @include desktop {
-    @include typography(48px, 48px, 500, -1px);
+  @include typography(2.25rem, 2.25rem, 500, -0.063rem);
+  @include tablet {
+    @include typography(2.5rem, 2.5rem, 500, -0.063rem);
+  }
+  @include big-desktop {
+    @include typography(3rem, 3rem, 500, -0.063rem);
   }
 }
 
 h4,
 .h4 {
-  @include typography(24px, 24px, 500, -0.5px);
+  @include typography(1.5rem, 1.5rem, 500, -0.0.313rem);
   @include desktop {
-    @include typography(36px, 40px, 500, -0.5px);
+    @include typography(2.25rem, 2.5rem, 500, -0.0.313rem);
   }
 }
 
 h5,
 .h5 {
-  @include typography(18px, 25px, 600, 8px);
+  @include typography(1.125rem, 1.563rem, 600, 0.5rem);
   @include desktop {
-    @include typography(32px, 40px, 600, 10px);
+    @include typography(2rem, 2.5rem, 600, 0.625rem);
   }
 }
 
 h6,
 .h6 {
-  @include typography(14px, 24px, 500, -0.25px);
+  @include typography(0.875rem, 1.5rem, 500, -0.1.563rem);
 
   @include desktop {
-    @include typography(16px, 28px, 500, 0);
+    @include typography(1rem, 1.75rem, 500, 0);
   }
 }
 

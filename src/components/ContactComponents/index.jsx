@@ -51,7 +51,7 @@ export default function ContactHome() {
                 component="h2">
                 HELLO@
               </Title>
-              <div ref={cbRef} />
+              <div ref={cbRef} className="ref-container-styles" />
 
               <Title
                 key="contact-email-2"
@@ -68,7 +68,7 @@ export default function ContactHome() {
 
             <div>
               <p
-                style={{ marginTop: '50px' }}
+                style={{ marginTop: '3.125rem' }}
                 className={join('contact-title', 'p', show ? 'show' : '', shuffle?.title)}>
                 OR CHECK MY SOCIAL NETWORKS:
               </p>

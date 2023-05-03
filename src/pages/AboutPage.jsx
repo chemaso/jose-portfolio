@@ -1,15 +1,19 @@
 import React from 'react';
-
 import ContentWrapper from '../components/ContentWrapper';
 import ProgressList from '../components/Progress';
 import Title from '../components/Title';
 import Header from '../components/Header';
 import { clients, skills } from '../constants';
-import '../styles/global.scss';
 import NextProduct from '../components/Next';
+import resumePdf from '../assets/jose-aguilar-resume.pdf';
+import Button from '../components/Button';
 import { useNavigate } from 'react-router';
+import { join } from '../utils';
+import { useTheme } from '../components/AppProvider';
+import '../styles/global.scss';
 
 export default function AboutPage() {
+  const { shuffle } = useTheme();
   const navigate = useNavigate();
   const handleExpandMenu = (route, size) => {
     const elemId = size === 'mobile' ? 'navigation-mobile' : 'site-logo-container';
@@ -56,6 +60,15 @@ export default function AboutPage() {
                   development methodologies, including Agile and DevOps, and I&apos;m always looking
                   for ways to improve my workflow and stay ahead of the curve.
                 </p>
+                <div className="about-content-download">
+                  <Button
+                    className={join('p', shuffle?.title)}
+                    href={resumePdf}
+                    download="jose-aguilar-resume.pdf"
+                    component="a">
+                    Download PDF Resume
+                  </Button>
+                </div>
               </div>
             </div>
             <div className="work-stack-container">

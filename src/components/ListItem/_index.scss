@@ -17,7 +17,7 @@
 }
 
 .work-list-container {
-  margin-top: 30px;
+  margin-top: 1.875rem;
   display: none;
 
   @include laptop {
@@ -25,7 +25,7 @@
   }
 }
 .work-list-container-mobile {
-  margin-top: 30px;
+  margin-top: 1.875rem;
   display: block;
 
   @include laptop {
@@ -41,7 +41,7 @@
   justify-content: space-between;
   border: none;
   background: none;
-  border-bottom: 2px solid;
+  border-bottom: 0.125rem solid;
   border-color: #bdbdbd;
   color: $color-black;
   opacity: 1;
@@ -159,31 +159,31 @@
     }
   }
   .list-item-content {
-    padding-left: 10px;
+    padding-left: 0.625rem;
     flex: 1 0 60%;
   }
 
   .list-item-subtle {
     @include tablet {
-      padding-right: 10px;
+      padding-right: 0.625rem;
     }
   }
 
   .list-item-label {
-    padding: 7px;
+    padding: 0.438rem;
     text-align: center;
     text-transform: uppercase;
     width: fit-content;
-    margin-bottom: 25px;
+    margin-bottom: 1.563rem;
     color: $color-white;
     opacity: 1;
-    @include typography(14px, 14px, 500, 2px);
+    @include typography(0.875rem, 0.875rem, 500, 0.125rem);
     @include color-pallete-set("background", "");
   }
   .list-item-title {
     width: fit-content;
     h3 {
-      letter-spacing: -4px;
+      letter-spacing: -0.25rem;
     }
   }
   .p {

@@ -2,12 +2,12 @@
 @import '../../styles/global.scss';
 
 .game-back-container {
-  padding-top: 55px;
+  padding-top: 3.438rem;
   height: 100vh;
   position: relative;
 
   @include laptop {
-    padding-right: 60px;
+    padding-right: 3.75rem;
   }
 }
 

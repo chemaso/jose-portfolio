@@ -103,7 +103,7 @@ export default function WorkPage() {
                 ariaLevel="h2">
                 TECH STACK:
               </Title>
-              <div ref={cbRef} />
+              <div ref={cbRef} className="ref-container-styles" />
               <ProgressList items={data?.stack} show={show} />
             </div>
             <div className="work-stack-container">

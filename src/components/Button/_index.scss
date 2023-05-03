@@ -2,43 +2,43 @@
 
 .button-container {
   color: $color-black;
-  border: 2px solid;
-  padding: 10px 20px;
+  border: 0.125rem solid;
+  padding: 0.625rem 1.25rem;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 0.188rem;
   
   button {
-    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
   }
   
   &.primary {
     &:hover, &:focus {
-      box-shadow: 10px 10px $color-primary;
+      box-shadow: 0.625rem 0.625rem $color-primary;
     }
   }
   &.secondary {
     &:hover, &:focus  {
-      box-shadow: 10px 10px $color-secondary;
+      box-shadow: 0.625rem 0.625rem $color-secondary;
     }
   }
   &.tertiary {
     &:hover, &:focus  {
-      box-shadow: 10px 10px $color-tertiary;
+      box-shadow: 0.625rem 0.625rem $color-tertiary;
     }
   }
   &.primary-variant {
     &:hover, &:focus  {
-      box-shadow: 10px 10px $color-primary-variant;
+      box-shadow: 0.625rem 0.625rem $color-primary-variant;
     }
   }
   &.secondary-variant {
     &:hover, &:focus  {
-      box-shadow: 10px 10px $color-secondary-variant;
+      box-shadow: 0.625rem 0.625rem $color-secondary-variant;
     }
   }
   &.tertiary-variant {
     &:hover, &:focus  {
-      box-shadow: 10px 10px $color-tertiary-variant;
+      box-shadow: 0.625rem 0.625rem $color-tertiary-variant;
     }
   }
 }

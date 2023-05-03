@@ -1,14 +1,14 @@
 .work-page-container {
     background-color: $background-color-primary--about;
-    padding: 0px 10px;
+    padding: 0rem 0.625rem;
     #work-overview-title {
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
     }
 
     .work-overview-content {
         color: $color-black;
-        font-size: 16px;
+        font-size: 1rem;
 
         animation: opacity-text 1s ease forwards;
     }
@@ -21,17 +21,22 @@
     }
 }
 
+.ref-container-styles {
+    height: 100vh;
+    position: absolute;
+}
+
 .work-images-container {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 40px;
+    padding-top: 2.5rem;
 
     .work-image-item {
         flex: 1 0 30%;
         width: 30%;
-        margin-right: 20px;
-        border: 2px solid $color-black;
-        @include color-pallete-set('box-shadow', '', 6px 6px);
+        margin-right: 1.25rem;
+        border: 0.125rem solid $color-black;
+        @include color-pallete-set('box-shadow', '', 0.375rem 0.375rem);
 
         &:hover{
             animation: scale-img .5s ease-in-out forwards;

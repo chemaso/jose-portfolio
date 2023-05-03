@@ -1,24 +1,30 @@
 @import '../../styles/global';
 
 .site-logo {
-    @include typography(23px, 1, 700, -0.5px, Syne);
-    top: 30px;
+    @include typography(1.438rem, 1, 700, -0.0.313rem, Syne);
+    top: 1.875rem;
     pointer-events: none;
     &.dark {
       @include dark;
     }
     .site-logo-base {
-      border: 3px solid;
-      padding: 5px 9px;
-      border-radius: 3px;
+      border: 0.188rem solid;
+      padding: 0.313rem 0.563rem;
+      border-radius: 0.188rem;
       @include color-pallete-set('border-color', "");
     }
 
     .site-logo-text-wrapper {
-      margin-left: 10px;
+      margin-left: 0.625rem;
       .site-logo-middle, .site-logo-bottom {
         margin: auto;
-        font-size: 20px;
+        font-size: 0.8rem;
+        @include laptop {
+          font-size: 1rem;
+        }
+        @include big-desktop {
+          font-size: 1.25rem;
+        }
       }
     }
   }

@@ -13,6 +13,7 @@
     
     .about-me-flex-container{
       flex-wrap: wrap;
+      position: relative;
       width: 100%;
     }
     
@@ -29,7 +30,7 @@
         position: absolute;
         height: 40vh;
         width: 100%;
-        max-height: 1000px;
+        max-height: 62.5rem;
         background: $background-color-primary--about;
         opacity: 0.7;
         top: 0;
@@ -45,7 +46,7 @@
       .about-me-col-1-title {
         position: absolute;
         height: 40vh;
-        max-height: 1000px;
+        max-height: 62.5rem;
         width: 100%;
         top: 0;
         pointer-events: none;
@@ -57,7 +58,6 @@
     .about-me-col-2 {
       width: 100%;
       flex: 1 0 45%;
-
 
       @include desktop {
         width: 50%;
@@ -73,7 +73,7 @@
         }
         p, a {
           text-transform: uppercase;
-          margin-bottom: 50px;
+          margin-bottom: 3.125rem;
         }
       }
 
@@ -89,3 +89,7 @@
     }
   }
   
+  .ref-container-styles {
+    height: 100vh;
+    position: absolute;
+}

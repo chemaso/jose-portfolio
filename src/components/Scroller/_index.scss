@@ -14,12 +14,12 @@
 
   &.mobile {
     display: flex;
-    bottom: 10px;
+    bottom: 0.625rem;
     left: 30%;
     .scroller-text {
-      padding-left: 14px;
+      padding-left: 0.875rem;
       p {
-        font-size: 14px;
+        font-size: 0.875rem;
       font-weight: bold;
       }
       &.dark {
@@ -41,12 +41,12 @@
 
     @include laptop {
       display: block;
-      bottom: 140px;
+      bottom: 9.313rem;
     }
   }
  
   .scroller-text {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 800;
     color: $color-white;
     &.dark {
@@ -54,24 +54,24 @@
     }
   }
   .scroller {
-    width: 60px;
-    height: 28px;
-    border: 5px solid $color-white;
-    border-radius: 15px;
+    width: 3.75rem;
+    height: 1.75rem;
+    border: 0.313rem solid $color-white;
+    border-radius: 0.938rem;
 
 
     &.dark {
       @include dark;
-      border: 5px solid $color-black;
+      border: 0.313rem solid $color-black;
     }
 
 
     .scroller-circle {
-      width: 14px;
-      height: 14px;
+      width: 0.875rem;
+      height: 0.875rem;
       color: $color-white;
-      margin: 2px;
-      border-radius: 100px;
+      margin: 0.125rem;
+      border-radius: 6.25rem;
       background: $color-white;
       animation: scroller 1s infinite;
       &.dark {
@@ -83,10 +83,10 @@
 
       @keyframes scroller {
         0% {
-          transform: translateX(0px);
+          transform: translateX(0rem);
         }
         100% {
-          transform: translateX(30px);
+          transform: translateX(1.875rem);
         }
       }
     }

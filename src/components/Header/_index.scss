@@ -3,16 +3,16 @@
 .header-container {
     padding-top: 20vh;
     position: relative;
-    padding-left: 10px;  
+    padding-left: 0.625rem;  
     @include tablet {
-      padding-right: 60px;
+      padding-right: 3.75rem;
       padding-left: 0;
     } 
 
     p {
         padding: 0;
         margin: 0;
-        padding-top: 20px;
+        padding-top: 1.25rem;
         @include dark;
     }
 }
