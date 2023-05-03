@@ -1,6 +1,6 @@
 # Jose's Portfolio
 
-Welcome to my portfolio! This is a showcase of my projects and skills as a software engineer.
+Welcome to my portfolio! This is a showcase of my projects and skills as a software engineer. TEST
 
 ## Table of Contents
 
