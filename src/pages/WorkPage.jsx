@@ -11,9 +11,11 @@ import { useIntersectionObserver } from '../utils';
 import { contents, products } from '../constants';
 import '../styles/global.scss';
 import Carousel from '../components/Carousel';
+import { useTheme } from '../components/AppProvider';
 
 export default function WorkPage() {
   const navigate = useNavigate();
+  const { setGlobalLoading } = useTheme();
   const { id: productId } = useParams();
   const [data, setData] = useState(null);
   const [show, setShow] = useState(false);
@@ -28,6 +30,10 @@ export default function WorkPage() {
       }
     });
   });
+
+  useEffect(() => {
+    setGlobalLoading(false);
+  }, []);
 
   useEffect(() => {
     if (typeof window !== `undefined`) {

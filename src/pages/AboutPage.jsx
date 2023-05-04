@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ContentWrapper from '../components/ContentWrapper';
 import ProgressList from '../components/Progress';
 import Title from '../components/Title';
@@ -13,7 +13,10 @@ import { useTheme } from '../components/AppProvider';
 import '../styles/global.scss';
 
 export default function AboutPage() {
-  const { shuffle } = useTheme();
+  const { shuffle, setGlobalLoading } = useTheme();
+  useEffect(() => {
+    setGlobalLoading(false);
+  }, []);
   const navigate = useNavigate();
   const handleExpandMenu = (route, size) => {
     const elemId = size === 'mobile' ? 'navigation-mobile' : 'site-logo-container';

@@ -10,10 +10,15 @@
   @include background-pallete-set("background", "");
   z-index: $z-index-loading;
   width: 100vw;
-  animation: show, hide;
-  animation-duration: 2s, 2s;
-  animation-delay: 0s, 2s;
+  animation: show;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
+
+  &.hide {
+    animation: hide;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
 
   .loading-logo {
       position: fixed;
@@ -21,7 +26,11 @@
       left: 50%;
       transform: translate(-50%, -50%);
       opacity: 0;
-      animation: show-logo 3s forwards;
+      animation: show-logo 1s forwards;
+
+      &.hide {
+        animation: hide-logo 1s forwards;
+      }
       .site-logo-bottom {
         animation: rotate-second 2s ease-in infinite;
       }
@@ -35,14 +44,25 @@
     from {
         opacity: 0;
     }
-    10% {
-        opacity: 1;
-    }
-    80% {
+    50% {
         opacity: 1;
     }
     100% {
-        opacity: 0;
+        opacity: 1;
+    }
+}
+@keyframes hide-logo {
+    from {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    90% {
+      opacity: 0;
+    }
+    100% {
+        z-index: -900;
     }
 }
 

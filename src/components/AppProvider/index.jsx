@@ -6,6 +6,7 @@ import StyleContext from '../../context';
 const AppProvider = ({ children }) => {
   const [shuffle, setShuffle] = useState({});
   const [styleIndex, setStyleIndex] = useState(0);
+  const [globalLoading, setGlobalLoading] = useState(true);
 
   useEffect(() => {
     setShuffle(shuffleOptions[0]);
@@ -15,6 +16,8 @@ const AppProvider = ({ children }) => {
     shuffle,
     onShuffle: setShuffle,
     styleIndex,
+    setGlobalLoading,
+    globalLoading,
     onStyleIndex: setStyleIndex
   };
 

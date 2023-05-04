@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../components/AppProvider';
 import ContentWrapper from '../components/ContentWrapper';
@@ -10,7 +10,11 @@ import Carousel from '../components/Carousel';
 import '../styles/global.scss';
 
 export default function WorkPage() {
-  const { onShuffle, styleIndex } = useTheme();
+  const { onShuffle, styleIndex, setGlobalLoading } = useTheme();
+
+  useEffect(() => {
+    setGlobalLoading(false);
+  }, []);
   const navigate = useNavigate();
   const handleOnMouseLeave = () => {
     const selected = shuffleOptions[styleIndex];
