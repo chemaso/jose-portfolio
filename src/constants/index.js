@@ -641,7 +641,7 @@ export const contents = [
       }
     ],
     overview: [
-      'My role on the team was to develop and maintain the front-end user interface of the platform, which included building data visualizations using D3 and Google Charts. I worked closely with designers to ensure that the visualizations were both aesthetically pleasing and provided meaningful insights into the data.',
+      'My role on the team was to develop and maintain the front-end user interface of the platform, which included building data visualizations using D3 and Google Charts. I worked closely with designers to ensure that the visualizations were provided meaningful insights into the data.',
       'Using D3, I created custom visualizations that allowed users to explore data in a more interactive and engaging way. I also used Google Charts to create more traditional graphs and charts, which provided a quick and easy way for users to get a sense of the data at a glance.'
     ],
     images: [

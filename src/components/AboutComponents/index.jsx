@@ -69,7 +69,7 @@ export default function AboutHome() {
               passionate about creating innovative and user-friendly web applications that deliver
               exceptional user experiences. I have experience in Graphic Design, which allows me to
               bring a unique perspective to my development projects, combining my technical skills
-              with a keen eye for aesthetics and usability.
+              with a keen eye for good design and usability.
             </p>
             <Button
               aria-label="navigate to about page."
