@@ -18,8 +18,6 @@ export default function WorkHome() {
     entries.forEach((entry) => {
       if (entry?.isIntersecting) {
         setShow(true);
-      } else {
-        setShow(false);
       }
     });
   });

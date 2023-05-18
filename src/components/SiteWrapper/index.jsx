@@ -38,9 +38,6 @@ export default function SiteWrapper() {
       setMeta(condition);
     }
     onShuffle(shuffleOptions[styleIndex]);
-  }, [pathname]);
-
-  useEffect(() => {
     setTimeout(() => {
       if (typeof window !== `undefined` && typeof document !== `undefined`) {
         if (hash !== '' && !hash.includes('main')) {
@@ -51,8 +48,8 @@ export default function SiteWrapper() {
           window.scrollTo(0, 0);
         }
       }
-    }, 100);
-  }, [hash]);
+    }, 150);
+  }, [hash, pathname]);
 
   const handleShuffle = (size) => {
     let find = shuffleOptions.findIndex((item) => item.item === shuffle.item) + 1;
