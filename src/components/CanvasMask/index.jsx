@@ -1,18 +1,11 @@
 import { useRef, useState, Suspense } from 'react';
 import round from 'lodash/round';
-import * as THREE from 'three';
-import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import { Canvas, useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { PerformanceMonitor } from '@react-three/drei/web';
 import { ColorAverage as ColorAverageEffect } from '@react-three/postprocessing';
 import { OrbitControls, Stage } from '@react-three/drei';
 import './_index.scss';
-
-function Rig({ v = new THREE.Vector3() }) {
-  return useFrame((state) => {
-    state.camera.position.lerp(v.set(state.mouse.x, state.mouse.y, 10), 0.05);
-  });
-}
 
 export default function CanvasMask({ ...props }) {
   const { nodes, materials } = useLoader(GLTFLoader, '/0 (12).glb');
@@ -43,9 +36,8 @@ export default function CanvasMask({ ...props }) {
                 />
               </group>
             </Stage>
-            <Rig />
             <ColorAverageEffect />
-            <OrbitControls enableZoom={false} enableRotate={false} autoRotate ref={ref} />
+            <OrbitControls enableZoom={false} enableRotate={true} autoRotate ref={ref} />
           </PerformanceMonitor>
         </Suspense>
       </Canvas>
